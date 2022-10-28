@@ -316,6 +316,7 @@
 	<div class="card__translater">
 		<div
 			class="card__rotator"
+			role="button"
 			bind:this={rotator}
 			on:pointerup={activate}
 			on:pointermove={interact}
