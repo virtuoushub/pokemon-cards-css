@@ -130,6 +130,7 @@
 					supertype={card.supertype}
 					subtypes={card.subtypes}
 					rarity={card.rarity}
+					tabIndex={id}
 				/>
 			{/each}
 		{/await}
