@@ -103,11 +103,6 @@
 		}, delay);
 	};
 
-	const touchEnd = (e, delay) => {
-		deactivate();
-		interactEnd(e, delay);
-	};
-
 	const activate = (e) => {
 		const isTouch = e.pointerType === 'touch';
 		if (!isTouch && $activeCard && $activeCard === thisCard) {
@@ -119,12 +114,12 @@
 		}
 	};
 
-	const deactivate = (e) => {
+	const deactivate = () => {
 		interactEnd();
 		$activeCard = undefined;
 	};
 
-	const reposition = (e) => {
+	const reposition = () => {
 		clearTimeout(debounce);
 		debounce = setTimeout(() => {
 			if ($activeCard && $activeCard === thisCard) {
@@ -219,7 +214,7 @@
 		}
 	}
 
-	const imageLoader = (e) => {
+	const imageLoader = () => {
 		loading = false;
 	};
 
@@ -264,7 +259,6 @@
 
 	onMount(() => {
 		if (showcase) {
-			let showTimer;
 			const s = 0.02;
 			const d = 0.5;
 			let r = 0;
