@@ -478,18 +478,19 @@
 		font-weight: 100;
 	}
 
-@media screen and (min-width: 600px) {
-	header {
-		grid-template-columns: 50% 1fr;
+	@media screen and (min-width: 600px) {
+		header {
+			grid-template-columns: 50% 1fr;
+		}
+		.showcase {
+			grid-column: 2;
+			grid-row: 2/4;
+		}
+		.intro,
+		.info {
+			grid-column: 1;
+		}
 	}
-	.showcase {
-		grid-column: 2;
-		grid-row: 2/4;
-	}
-	.intro, .info {
-		grid-column: 1;
-	}
-}
 
 	@media screen and (min-width: 900px) {
 		header {
