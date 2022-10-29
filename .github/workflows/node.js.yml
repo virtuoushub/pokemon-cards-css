@@ -36,6 +36,7 @@ jobs:
           max_attempts: 3
           retry_on: error
           command: npm ci
+      - run: npx playwright install-deps
       - name: run tests
         uses: nick-fields/retry@v2.8.2
         with:
