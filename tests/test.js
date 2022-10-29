@@ -12,7 +12,7 @@ test('index page has expected first h2', async ({ page }) => {
 	);
 });
 
-test('index page has all expected h2', async ({ page }) => {
+test('index page has expected number h2 elements', async ({ page }) => {
 	await page.goto('/');
 	const elements = page.locator('h2');
 	const isExpectedH2Count = await elements.evaluateAll((h2s, count) => h2s.length === count, 16);
