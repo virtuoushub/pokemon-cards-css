@@ -1,16 +1,17 @@
 <script>
 	import { spring } from 'svelte/motion';
 	import { onMount } from 'svelte';
-	import { activeCard } from '$lib/stores/activeCard.js';
-	import { orientation, resetBaseOrientation } from '$lib/stores/orientation.js';
-	import { clamp, round } from '$lib/helpers/Math.js';
+	import { activeCard } from '../stores/activeCard.js';
+	import { orientation, resetBaseOrientation } from '../stores/orientation.js';
+	import { clamp, round } from '../helpers/Math.js';
 
-	import Glare from '$lib/components/card-glare.svelte';
-	import Shine from '$lib/components/card-shine.svelte';
+	import Glare from '../components/card-glare.svelte';
+	import Shine from '../components/card-shine.svelte';
 
 	export let cardBack = 'https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg';
 	export let img = cardBack;
 
+	export let name = '';
 	export let number = cardBack;
 	export let subtypes = 'basic';
 	export let supertype = 'pokémon';
@@ -104,16 +105,23 @@
 	};
 
 	const activate = (e) => {
-		if (e.type === 'keypress' && e.code !== 'KeyC') {
-			return;
-		}
 		const isTouch = e.pointerType === 'touch';
-		if (!isTouch && $activeCard && $activeCard === thisCard) {
-			// deactive if already active
-			$activeCard = undefined;
+		const isKeyboard = e.type === 'keyup';
+		if (isKeyboard) {
+			if ([' ', 'Enter'].includes(e.key) && $activeCard !== thisCard) {
+				$activeCard = thisCard;
+				resetBaseOrientation();
+			} else {
+				$activeCard = undefined;
+			}
 		} else {
-			$activeCard = thisCard;
-			resetBaseOrientation();
+			if (!isTouch && $activeCard && $activeCard === thisCard) {
+				// deactivate on desktop, if already active
+				$activeCard = undefined;
+			} else {
+				$activeCard = thisCard;
+				resetBaseOrientation();
+			}
 		}
 	};
 
@@ -278,8 +286,15 @@
 				let circle = setInterval(function () {
 					r += 0.05;
 					springRotate.set({ x: Math.sin(r) * 25, y: Math.cos(r) * 25 });
-					springGlare.set({ x: 55 + Math.sin(r) * 55, y: 55 + Math.cos(r) * 55, o: 0.8 });
-					springBackground.set({ x: 20 + Math.sin(r) * 20, y: 20 + Math.cos(r) * 20 });
+					springGlare.set({
+						x: 55 + Math.sin(r) * 55,
+						y: 55 + Math.cos(r) * 55,
+						o: 0.8
+					});
+					springBackground.set({
+						x: 20 + Math.sin(r) * 20,
+						y: 20 + Math.cos(r) * 20
+					});
 				}, 20);
 
 				setTimeout(() => {
@@ -309,29 +324,37 @@
 	bind:this={thisCard}
 >
 	<div class="card__translater">
-		<div
+		<button
 			class="card__rotator"
-			role="button"
 			bind:this={rotator}
-			on:keypress={activate}
 			on:pointerup={activate}
+			on:keyup={activate}
 			on:pointermove={interact}
 			on:mouseout={interactEnd}
 			on:blur={deactivate}
+			aria-label="Expand the Pokemon Card; {name}"
+			title="Click to expand the Pokemon Card; {name}"
 			tabindex="0"
 		>
-			<img class="card__back" src={cardBack} alt="" />
+			<img
+				class="card__back"
+				src={cardBack}
+				alt="The back of a Pokemon Card, a Pokeball in the center with Pokemon logo above and below"
+				loading="lazy"
+				width="660"
+				height="921"
+			/>
 			<div class="card__front">
 				<img
 					src="{img.startsWith('http') ? '' : base}{img}"
-					alt=""
+					alt="Front image of the {name} Pokemon Card"
 					on:load={imageLoader}
 					loading="lazy"
 				/>
 				<Shine {subtypes} {supertype} />
 				<Glare {subtypes} />
 			</div>
-		</div>
+		</button>
 	</div>
 </div>
 
@@ -391,6 +414,13 @@
 		outline: none;
 		transition: box-shadow 0.4s ease, outline 0.2s ease;
 	}
+	button.card__rotator {
+		appearance: none;
+		-webkit-appearance: none;
+		border: none;
+		background: top;
+		padding: 0;
+	}
 
 	.card.active .card__rotator {
 		box-shadow: 0 0 10px 0px var(--glow), 0 0 10px 0px var(--glow), 0 0 30px 0px var(--glow);
@@ -411,7 +441,12 @@
 		border-radius: var(--radius);
 		image-rendering: optimizeQuality;
 		transform-style: preserve-3d;
+	}
+
+	.card__rotator img {
 		outline: 1px solid transparent;
+		aspect-ratio: 0.716;
+		height: auto;
 	}
 
 	.card__back {
