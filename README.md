@@ -1,20 +1,8 @@
-# create-svelte
+# pokemon-cards-css
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+Forked from https://github.com/simeydotme/pokemon-cards-css ( https://deck-24abcd.netlify.app/ )
 
-## Creating a project
-
-If you're seeing this, you've probably already done this step. Congrats!
-
-```bash
-# create a new project in the current directory
-npm init svelte@next
-
-# create a new project in my-app
-npm init svelte@next my-app
-```
-
-> Note: the `@next` is temporary
+Found on https://news.ycombinator.com/item?id=33363331 - https://news.ycombinator.com/from?site=deck-24abcd.netlify.app
 
 ## Developing
 
