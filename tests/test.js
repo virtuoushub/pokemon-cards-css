@@ -8,7 +8,7 @@ test('index page has expected h1', async ({ page }) => {
 test('index page has expected first h2', async ({ page }) => {
 	await page.goto('/');
 	expect(await page.textContent('h2')).toBe(
-		'(Go ahead, try clicking a card to take a closer look!)'
+		"(Go ahead, try clicking a card, or press 'c' to take a closer look!)"
 	);
 });
 

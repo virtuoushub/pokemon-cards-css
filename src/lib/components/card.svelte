@@ -104,6 +104,9 @@
 	};
 
 	const activate = (e) => {
+		if (e.type === 'keypress' && e.code !== "KeyC") {
+			return;
+		}
 		const isTouch = e.pointerType === 'touch';
 		if (!isTouch && $activeCard && $activeCard === thisCard) {
 			// deactive if already active
@@ -310,6 +313,7 @@
 			class="card__rotator"
 			role="button"
 			bind:this={rotator}
+			on:keypress={activate}
 			on:pointerup={activate}
 			on:pointermove={interact}
 			on:mouseout={interactEnd}

@@ -74,7 +74,7 @@
 		</div>
 
 		<section class="info">
-			<h2><em>(Go ahead, try clicking a card to take a closer look!)</em></h2>
+			<h2><em>(Go ahead, try clicking a card, or press 'c' to take a closer look!)</em></h2>
 
 			<hr />
 
