@@ -104,7 +104,7 @@
 	};
 
 	const activate = (e) => {
-		if (e.type === 'keypress' && e.code !== "KeyC") {
+		if (e.type === 'keypress' && e.code !== 'KeyC') {
 			return;
 		}
 		const isTouch = e.pointerType === 'touch';
