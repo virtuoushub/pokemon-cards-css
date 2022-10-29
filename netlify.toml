@@ -1,0 +1,5 @@
+# https://docs.netlify.com/configure-builds/file-based-configuration/
+# https://github.com/sveltejs/kit/tree/master/packages/adapter-netlify#installation
+[build]
+  command = "npm run build"
+  publish = "build"
