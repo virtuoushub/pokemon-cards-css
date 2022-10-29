@@ -1,0 +1,52 @@
+# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
+
+name: Node.js CI
+
+on:
+  push:
+    branches: [ main ]
+    paths-ignore:
+      - '**.md'
+      - '.gitpod.Dockerfile'
+      - '.gitpod.yml'
+  pull_request:
+    branches: [ main ]
+    paths-ignore:
+      - '.github/**'
+      - '**.md'
+      - '.gitpod.Dockerfile'
+      - '.gitpod.yml'
+  workflow_dispatch:
+
+jobs:
+  build:
+
+    runs-on: ubuntu-20.04
+
+    steps:
+    - uses: actions/checkout@v3.1.0
+    - name: Use Node.js
+      uses: actions/setup-node@v3.5.1
+      with:
+        node-version-file: '.nvmrc'
+        cache: 'npm'
+    - run:  npm dedupe --dry-run
+    - uses: nick-fields/retry@v2.8.2
+      with:
+        timeout_minutes: 2
+        max_attempts: 3
+        retry_on: error
+        command: npm ci
+    - name: run tests
+      uses: nick-fields/retry@v2.8.2
+      with:
+        timeout_minutes: 3
+        max_attempts: 3
+        retry_on: error
+        command: npm run test
+    - uses: actions/upload-artifact@v3.1.1
+      with:
+        name: build-for-${{github.sha}}
+        path: |
+          build/
