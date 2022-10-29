@@ -5,13 +5,13 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
     paths-ignore:
       - '**.md'
       - '.gitpod.Dockerfile'
       - '.gitpod.yml'
   pull_request:
-    branches: [ main ]
+    branches: [main]
     paths-ignore:
       - '**.md'
       - '.gitpod.Dockerfile'
@@ -20,32 +20,31 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-20.04
 
     steps:
-    - uses: actions/checkout@v3.1.0
-    - name: Use Node.js
-      uses: actions/setup-node@v3.5.1
-      with:
-        node-version-file: '.nvmrc'
-        cache: 'npm'
-    - run:  npm dedupe --dry-run
-    - uses: nick-fields/retry@v2.8.2
-      with:
-        timeout_minutes: 2
-        max_attempts: 3
-        retry_on: error
-        command: npm ci
-    - name: run tests
-      uses: nick-fields/retry@v2.8.2
-      with:
-        timeout_minutes: 3
-        max_attempts: 3
-        retry_on: error
-        command: npm run test
-    - uses: actions/upload-artifact@v3.1.1
-      with:
-        name: build-for-${{github.sha}}
-        path: |
-          build/
+      - uses: actions/checkout@v3.1.0
+      - name: Use Node.js
+        uses: actions/setup-node@v3.5.1
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'npm'
+      - run: npm dedupe --dry-run
+      - uses: nick-fields/retry@v2.8.2
+        with:
+          timeout_minutes: 2
+          max_attempts: 3
+          retry_on: error
+          command: npm ci
+      - name: run tests
+        uses: nick-fields/retry@v2.8.2
+        with:
+          timeout_minutes: 3
+          max_attempts: 3
+          retry_on: error
+          command: npm run test
+      - uses: actions/upload-artifact@v3.1.1
+        with:
+          name: build-for-${{github.sha}}
+          path: |
+            build/
