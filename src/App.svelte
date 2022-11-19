@@ -19,8 +19,6 @@
 	let veeGallery;
 
 	const getCards = async () => {
-		let promiseArray = [];
-
 		let cardFetch = await fetch("/data.json");
 		let cards = await cardFetch.json();
 		// window.cards = cards;

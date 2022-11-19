@@ -19,9 +19,6 @@
   export let gallery = false;
   export let showcase = false;
 
-	const back_loading = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAuCAYAAACmsnC6AAAANklEQVR42u3OMQEAAAQAMKJJJT4ZXJ4twTKqJ56lhISEhISEhISEhISEhISEhISEhISEhMTdAodwTxGtMFP/AAAAAElFTkSuQmCC";
-	const front_loading = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAuCAYAAACmsnC6AAAAN0lEQVR42u3OIQEAMAgAsNP/AkFfyIDCbAkWP6vfsZCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQ2BtyOnuhnmSZZAAAAABJRU5ErkJggg==";
-	
   let img_base = img.startsWith('http') ? '' : "https://images.pokemontcg.io/";
 	let front_img = "";
 
@@ -135,12 +132,12 @@
 		}
   };
 
-  const deactivate = (e) => {
+  const deactivate = () => {
     interactEnd();
     $activeCard = undefined;
   };
 
-  const reposition = (e) => {
+  const reposition = () => {
     clearTimeout(debounce);
     debounce = setTimeout(() => {
       if ($activeCard && $activeCard === thisCard) {
@@ -235,7 +232,7 @@
     }
   }
 
-  const imageLoader = (e) => {
+  const imageLoader = () => {
     loading = false;
   };
 
@@ -280,7 +277,6 @@
 
   onMount(() => {
     if (showcase && document.hasFocus()) {
-      let showTimer;
       const s = 0.02;
       const d = 0.5;
       let r = 0;
