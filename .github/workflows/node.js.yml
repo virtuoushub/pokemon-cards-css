@@ -30,21 +30,21 @@ jobs:
           node-version-file: '.nvmrc'
           cache: 'npm'
       - run: npm dedupe --dry-run
-      - uses: nick-fields/retry@v2.8.2
+      - uses: nick-fields/retry@v2.8.3
         with:
           timeout_minutes: 2
           max_attempts: 3
           retry_on: error
           command: npm ci
       - run: npx eslint src
-      - uses: nick-fields/retry@v2.8.2
+      - uses: nick-fields/retry@v2.8.3
         with:
           timeout_minutes: 2
           max_attempts: 2
           retry_on: error
           command: npx playwright install --with-deps
       - name: run tests
-        uses: nick-fields/retry@v2.8.2
+        uses: nick-fields/retry@v2.8.3
         with:
           timeout_minutes: 3
           max_attempts: 3
