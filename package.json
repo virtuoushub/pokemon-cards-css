@@ -12,7 +12,7 @@
 	"devDependencies": {
 		"@playwright/test": "1.32.3",
 		"@sveltejs/vite-plugin-svelte": "1.4.0",
-		"svelte": "3.59.0",
+		"svelte": "3.59.1",
 		"vite": "3.2.6",
 		"eslint": "8.40.0",
 		"eslint-config-prettier": "8.8.0",
