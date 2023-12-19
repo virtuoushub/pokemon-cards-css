@@ -8,13 +8,13 @@ test('index page has expected h1', async ({ page }) => {
 test('index page has expected first h2', async ({ page }) => {
 	await page.goto('/');
 	expect(await page.textContent('h2')).toBe(
-		"(Go ahead, try clicking a card to take a closer look!)"
+		"Click on a Card to take a Closer look!"
 	);
 });
 
 test('index page has expected number h2 elements', async ({ page }) => {
 	await page.goto('/');
 	const elements = page.locator('h2');
-	const isExpectedH2Count = await elements.evaluateAll((h2s, count) => h2s.length === count, 16);
+	const isExpectedH2Count = await elements.evaluateAll((h2s, count) => h2s.length === count, 19);
 	expect(isExpectedH2Count).toBeTruthy();
 });

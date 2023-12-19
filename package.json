@@ -1,23 +1,19 @@
 {
-	"name": "pokemon-deck-builder",
-	"private": true,
-	"version": "0.0.0",
-	"type": "module",
-	"scripts": {
-		"dev": "vite --host",
-		"test": "playwright test",
-		"build": "vite build",
-		"preview": "vite preview"
-	},
-	"devDependencies": {
-		"@playwright/test": "1.32.3",
-		"@sveltejs/vite-plugin-svelte": "1.4.0",
-		"svelte": "3.59.2",
-		"vite": "3.2.7",
-		"eslint": "8.56.0",
-		"eslint-config-prettier": "9.1.0",
-		"eslint-plugin-svelte3": "4.0.0",
-		"prettier": "2.8.8",
-		"prettier-plugin-svelte": "2.10.1"
-	}
+  "name": "pokemon-deck-builder",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host",
+    "test": "playwright test",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.32.3",
+    "@sveltejs/vite-plugin-svelte": "^1.1.0",
+    "pokemontcgsdk": "^2.0.0",
+    "svelte": "^3.52.0",
+    "vite": "^3.2.0"
+  }
 }
