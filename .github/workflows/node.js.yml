@@ -50,7 +50,7 @@ jobs:
           max_attempts: 3
           retry_on: error
           command: npm run test
-      - uses: actions/upload-artifact@v4.3.2
+      - uses: actions/upload-artifact@v4.3.3
         with:
           name: build-for-${{github.sha}}
           path: |
