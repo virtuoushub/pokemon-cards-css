@@ -11,13 +11,16 @@
 	},
 	"devDependencies": {
 		"@playwright/test": "1.43.1",
-		"vite": "5.2.10",
 		"@sveltejs/vite-plugin-svelte": "3.1.0",
-		"svelte": "4.2.15",
 		"eslint": "9.1.1",
 		"eslint-config-prettier": "9.1.0",
 		"eslint-plugin-svelte": "2.38.0",
 		"prettier": "3.2.5",
-		"prettier-plugin-svelte": "3.2.3"
+		"prettier-plugin-svelte": "3.2.3",
+		"svelte": "4.2.15",
+		"vite": "5.2.10"
+	},
+	"dependencies": {
+		"pokemontcgsdk": "2.0.0"
 	}
 }
