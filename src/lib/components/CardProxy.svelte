@@ -79,10 +79,6 @@
   function isDefined (v) {
     return typeof v !== "undefined" && v !== null;
   }
-  
-  function isArray (v) {
-    return typeof v !== "undefined" && Array.isArray(v);
-  }
 
   function cardImage () {
     if ( isDefined( img ) ) {

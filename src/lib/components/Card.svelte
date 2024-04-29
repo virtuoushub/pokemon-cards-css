@@ -141,7 +141,7 @@
     }, delay);
   };
 
-  const activate = (e) => {
+  const activate = () => {
     if ($activeCard && $activeCard === thisCard) {
       $activeCard = undefined;
     } else {
@@ -166,12 +166,12 @@
     }
   };
 
-  const deactivate = (e) => {
+  const deactivate = () => {
     interactEnd();
     $activeCard = undefined;
   };
 
-  const reposition = (e) => {
+  const reposition = () => {
     clearTimeout(repositionTimer);
     repositionTimer = setTimeout(() => {
       if ($activeCard && $activeCard === thisCard) {
@@ -325,13 +325,13 @@
     }
   }
 
-  document.addEventListener("visibilitychange", (e) => {
+  document.addEventListener("visibilitychange", () => {
     isVisible = document.visibilityState === "visible";
     endShowcase();
     reset();
   });
 
-  const imageLoader = (e) => {
+  const imageLoader = () => {
     loading = false;
     if ( mask || foil ) {
       foilStyles = `
@@ -350,7 +350,6 @@
     // run a cute little animation on load
     // for showcase card
     if (showcase && isVisible) {
-      let showTimer;
       const s = 0.02;
       const d = 0.5;
       let r = 0;

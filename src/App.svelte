@@ -13,7 +13,6 @@
 	let isLoading = true;
 
 	const getCards = async () => {
-		let promiseArray = [];
 		let cardFetch = await fetch("/data/cards.json");
 		let cards = await cardFetch.json();
 		return cards;
@@ -131,7 +130,7 @@
 			{#if isLoading}
 				loading...
 			{:else}
-				{#each basics as card, index}
+				{#each basics as card}
 					<Card
 						id={card.id}
 						name={card.name}
@@ -160,7 +159,7 @@
 			{#if isLoading}
 				loading...
 			{:else}
-				{#each reverse as card, index}
+				{#each reverse as card}
 					<Card
 						id={card.id}
 						name={card.name}
@@ -192,7 +191,7 @@
 			{#if isLoading}
 				loading...
 			{:else}
-				{#each holos as card, index}
+				{#each holos as card}
 					<Card
 						id={card.id}
 						name={card.name}
@@ -222,7 +221,7 @@
 			{#if isLoading}
 				loading...
 			{:else}
-				{#each cosmos as card, index}
+				{#each cosmos as card}
 					<Card
 						id={card.id}
 						name={card.name}
@@ -251,7 +250,7 @@
 			{#if isLoading}
 				loading...
 			{:else}
-				{#each amazings as card, index}
+				{#each amazings as card}
 					<Card
 						id={card.id}
 						name={card.name}
@@ -282,7 +281,7 @@
 			{#if isLoading}
 				loading...
 			{:else}
-				{#each radiant as card, index}
+				{#each radiant as card}
 					<Card
 						id={card.id}
 						name={card.name}
@@ -313,7 +312,7 @@
 			{#if isLoading}
 				loading...
 			{:else}
-				{#each basicGallery as card, index}
+				{#each basicGallery as card}
 					<Card
 						id={card.id}
 						name={card.name}
@@ -347,7 +346,7 @@
 			{#if isLoading}
 				loading...
 			{:else}
-				{#each vee as card, index}
+				{#each vee as card}
 					<Card
 						id={card.id}
 						name={card.name}
@@ -382,7 +381,7 @@
 			{#if isLoading}
 				loading...
 			{:else}
-				{#each veeUltra as card, index}
+				{#each veeUltra as card}
 					<Card
 						id={card.id}
 						name={card.name}
@@ -413,7 +412,7 @@
 			{#if isLoading}
 				loading...
 			{:else}
-				{#each veeAlt as card, index}
+				{#each veeAlt as card}
 					<Card
 						id={card.id}
 						name={card.name}
@@ -444,7 +443,7 @@
 			{#if isLoading}
 				loading...
 			{:else}
-				{#each veeMax as card, index}
+				{#each veeMax as card}
 					<Card
 						id={card.id}
 						name={card.name}
@@ -479,7 +478,7 @@
 			{#if isLoading}
 				loading...
 			{:else}
-				{#each veeMaxAlt as card, index}
+				{#each veeMaxAlt as card}
 					<Card
 						id={card.id}
 						name={card.name}
@@ -510,7 +509,7 @@
 			{#if isLoading}
 				loading...
 			{:else}
-				{#each veeStar as card, index}
+				{#each veeStar as card}
 					<Card
 						id={card.id}
 						name={card.name}
@@ -541,7 +540,7 @@
 			{#if isLoading}
 				loading...
 			{:else}
-				{#each trainerHolo as card, index}
+				{#each trainerHolo as card}
 					<Card
 						id={card.id}
 						name={card.name}
@@ -571,7 +570,7 @@
 			{#if isLoading}
 				loading...
 			{:else}
-				{#each rainbow as card, index}
+				{#each rainbow as card}
 					<Card
 						id={card.id}
 						name={card.name}
@@ -606,7 +605,7 @@
 			{#if isLoading}
 				loading...
 			{:else}
-				{#each gold as card, index}
+				{#each gold as card}
 					<Card
 						id={card.id}
 						name={card.name}
@@ -635,7 +634,7 @@
 			{#if isLoading}
 				loading...
 			{:else}
-				{#each veeGallery as card, index}
+				{#each veeGallery as card}
 					<Card
 						id={card.id}
 						name={card.name}
@@ -666,7 +665,7 @@
 			{#if isLoading}
 				loading...
 			{:else}
-				{#each shinyVault as card, index}
+				{#each shinyVault as card}
 					<Card
 						id={card.id}
 						name={card.name}

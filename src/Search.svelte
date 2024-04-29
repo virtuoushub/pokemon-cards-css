@@ -1,6 +1,5 @@
 <script>
 	import pokemon from "pokemontcgsdk";
-  import { onMount } from "svelte";
 
 	import CardList from "./Cards.svelte";
 	import Card from "./lib/components/CardProxy.svelte";
@@ -53,7 +52,7 @@
 
 			  })
         
-        .catch((a,b,c) => {
+        .catch(() => {
           queryResult = [];
 					loadingQuery = false;
           isError = true;
@@ -97,7 +96,7 @@
 
 {#if usableQuery && queryResult.length}
   <CardList>
-    {#each queryResult as card, index (card.id)}
+    {#each queryResult as card (card.id)}
       <Card
         id={card.id}
         name={card.name}
