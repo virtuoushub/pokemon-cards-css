@@ -102,8 +102,8 @@
 	<CardList>
 		{#await getCards()}
 			loading...
-		{:then cards}
-			{#each basics as card, id}
+		{:then}
+			{#each basics as card}
 				<Card
 					name={card.name}
 					img={card.images.large}
@@ -127,8 +127,8 @@
 	<CardList>
 		{#await getCards()}
 			loading...
-		{:then cards}
-			{#each holos as card, id}
+		{:then}
+			{#each holos as card}
 				<Card
 					name={card.name}
 					img={card.images.large}
@@ -152,8 +152,8 @@
 	<CardList>
 		{#await getCards()}
 			loading...
-		{:then cards}
-			{#each galaxies as card, id}
+		{:then}
+			{#each galaxies as card}
 				<Card
 					name={card.name}
 					img={card.images.large}
@@ -177,8 +177,8 @@
 	<CardList>
 		{#await getCards()}
 			loading...
-		{:then cards}
-			{#each radiant as card, id}
+		{:then}
+			{#each radiant as card}
 				<Card
 					name={card.name}
 					img={card.images.large}
@@ -202,8 +202,8 @@
 	<CardList>
 		{#await getCards()}
 			loading...
-		{:then cards}
-			{#each basicGallery as card, id}
+		{:then}
+			{#each basicGallery as card}
 				<Card
 					name={card.name}
 					img={card.images.large}
@@ -230,8 +230,8 @@
 	<CardList>
 		{#await getCards()}
 			loading...
-		{:then cards}
-			{#each vee as card, id}
+		{:then}
+			{#each vee as card}
 				<Card
 					name={card.name}
 					img={card.images.large}
@@ -259,8 +259,8 @@
 	<CardList>
 		{#await getCards()}
 			loading...
-		{:then cards}
-			{#each veeUltra as card, id}
+		{:then}
+			{#each veeUltra as card}
 				<Card
 					name={card.name}
 					img={card.images.large}
@@ -284,8 +284,8 @@
 	<CardList>
 		{#await getCards()}
 			loading...
-		{:then cards}
-			{#each veeAlt as card, id}
+		{:then}
+			{#each veeAlt as card}
 				<Card
 					name={card.name}
 					img={card.images.large}
@@ -309,8 +309,8 @@
 	<CardList>
 		{#await getCards()}
 			loading...
-		{:then cards}
-			{#each veeMax as card, id}
+		{:then}
+			{#each veeMax as card}
 				<Card
 					name={card.name}
 					img={card.images.large}
@@ -338,8 +338,8 @@
 	<CardList>
 		{#await getCards()}
 			loading...
-		{:then cards}
-			{#each veeMaxAlt as card, id}
+		{:then}
+			{#each veeMaxAlt as card}
 				<Card
 					name={card.name}
 					img={card.images.large}
@@ -363,8 +363,8 @@
 	<CardList>
 		{#await getCards()}
 			loading...
-		{:then cards}
-			{#each veeStar as card, id}
+		{:then}
+			{#each veeStar as card}
 				<Card
 					name={card.name}
 					img={card.images.large}
@@ -388,8 +388,8 @@
 	<CardList>
 		{#await getCards()}
 			loading...
-		{:then cards}
-			{#each trainerHolo as card, id}
+		{:then}
+			{#each trainerHolo as card}
 				<Card
 					name={card.name}
 					img={card.images.large}
@@ -412,8 +412,8 @@
 	<CardList>
 		{#await getCards()}
 			loading...
-		{:then cards}
-			{#each rainbow as card, id}
+		{:then}
+			{#each rainbow as card}
 				<Card
 					name={card.name}
 					img={card.images.large}
@@ -436,8 +436,8 @@
 	<CardList>
 		{#await getCards()}
 			loading...
-		{:then cards}
-			{#each gold as card, id}
+		{:then}
+			{#each gold as card}
 				<Card
 					name={card.name}
 					img={card.images.large}
@@ -459,8 +459,8 @@
 	<CardList>
 		{#await getCards()}
 			loading...
-		{:then cards}
-			{#each veeGallery as card, id}
+		{:then}
+			{#each veeGallery as card}
 				<Card
 					name={card.name}
 					img={card.images.large}
