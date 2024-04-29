@@ -23,34 +23,34 @@ jobs:
     runs-on: ubuntu-22.04
 
     steps:
-      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+      - uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b # v4.1.4
       - name: Use Node.js
-        uses: actions/setup-node@v4.0.1
+        uses: actions/setup-node@v4.0.2
         with:
           node-version-file: '.nvmrc'
           cache: 'npm'
       - run: npm dedupe --dry-run
-      - uses: nick-fields/retry@v2.9.0
+      - uses: nick-fields/retry@v3.0.0
         with:
           timeout_minutes: 2
           max_attempts: 3
           retry_on: error
           command: npm ci
-      - run: npx eslint src
-      - uses: nick-fields/retry@v2.9.0
+      - run: ESLINT_USE_FLAT_CONFIG=false npx eslint src
+      - uses: nick-fields/retry@v3.0.0
         with:
           timeout_minutes: 2
           max_attempts: 2
           retry_on: error
           command: npx playwright install --with-deps
       - name: run tests
-        uses: nick-fields/retry@v2.9.0
+        uses: nick-fields/retry@v3.0.0
         with:
           timeout_minutes: 3
           max_attempts: 3
           retry_on: error
           command: npm run test
-      - uses: actions/upload-artifact@v4.0.0
+      - uses: actions/upload-artifact@v4.3.3
         with:
           name: build-for-${{github.sha}}
           path: |

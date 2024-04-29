@@ -597,6 +597,11 @@
 		that foil and glitter layers are mutually exclusive. The resulting effect is a shimmering glitter layer!
 		</p>
 
+	<h2>Trainer Gallery <sup>(V / VMax)</sup></h2>
+	<p>
+		The V and VMax cards in the Trainer Gallery are generally quite similar to the normal V and VMax
+		cards, so here I've just tweaked the values a little and added a different background texture.
+	</p>
 		<CardList>
 			{#if isLoading}
 				loading...
