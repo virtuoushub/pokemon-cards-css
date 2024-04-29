@@ -15,5 +15,5 @@ test('index page has expected first h2', async ({ page }) => {
 test('index page has expected number h2 elements', async ({ page }) => {
 	await page.goto('/');
 	const h2Elements = page.locator('h2');
-	await expect(h2Elements).toHaveCount(19);
+	await expect(h2Elements).toHaveCount(20);
 });
