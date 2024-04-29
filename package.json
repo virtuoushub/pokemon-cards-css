@@ -10,7 +10,7 @@
 		"preview": "vite preview"
 	},
 	"devDependencies": {
-		"@playwright/test": "1.32.3",
+		"@playwright/test": "1.43.1",
 		"vite": "5.2.10",
 		"@sveltejs/vite-plugin-svelte": "3.1.0",
 		"svelte": "4.2.15",
