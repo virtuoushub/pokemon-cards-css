@@ -10,7 +10,7 @@
 		"preview": "vite preview"
 	},
 	"devDependencies": {
-		"@playwright/test": "1.43.1",
+		"@playwright/test": "1.44.0",
 		"@sveltejs/vite-plugin-svelte": "3.1.0",
 		"eslint": "9.2.0",
 		"eslint-config-prettier": "9.1.0",
