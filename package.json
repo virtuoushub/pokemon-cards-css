@@ -12,7 +12,7 @@
 	"devDependencies": {
 		"@playwright/test": "1.50.1",
 		"@sveltejs/vite-plugin-svelte": "3.1.2",
-		"eslint": "9.19.0",
+		"eslint": "9.20.0",
 		"eslint-config-prettier": "10.0.1",
 		"eslint-plugin-svelte": "2.46.1",
 		"pokemontcgsdk": "2.0.0",
