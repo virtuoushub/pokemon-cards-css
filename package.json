@@ -16,7 +16,7 @@
 		"eslint-config-prettier": "10.0.1",
 		"eslint-plugin-svelte": "2.46.1",
 		"pokemontcgsdk": "2.0.0",
-		"prettier": "3.5.2",
+		"prettier": "3.5.3",
 		"prettier-plugin-svelte": "3.3.3",
 		"svelte": "4.2.19",
 		"vite": "5.4.14"
