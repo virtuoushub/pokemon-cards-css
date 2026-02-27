@@ -14,7 +14,7 @@
 		"@sveltejs/vite-plugin-svelte": "3.1.2",
 		"eslint": "9.39.3",
 		"eslint-config-prettier": "10.1.8",
-		"eslint-plugin-svelte": "2.46.1",
+		"eslint-plugin-svelte": "3.15.0",
 		"pokemontcgsdk": "2.0.0",
 		"prettier": "3.8.1",
 		"prettier-plugin-svelte": "3.5.0",
