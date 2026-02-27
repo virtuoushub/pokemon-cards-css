@@ -19,6 +19,6 @@
 		"prettier": "3.8.1",
 		"prettier-plugin-svelte": "3.5.0",
 		"svelte": "4.2.20",
-		"vite": "5.4.21"
+		"vite": "7.3.1"
 	}
 }
